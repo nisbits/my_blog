@@ -1,0 +1,12 @@
+{% extends "blogApp/base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/blogApp/singleblog.css' %}" />
+{% endblock %} 
+{% block content %}
+<h1>{{blog.title}}</h1>
+<div>
+  <p>{{blog.content}}</p>
+  <p>By:-{{blog.author}}</p>
+  
+</div>
+
+{% endblock %}

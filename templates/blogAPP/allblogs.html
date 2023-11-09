@@ -1,0 +1,24 @@
+{% extends "blogApp/base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/blogApp/allblogs.css' %}" />
+{% endblock %} 
+{% block content %}
+<h1>Latest Blogs</h1>
+
+<div class="flex-container">
+    {% for blog in blog_posts %}
+  <div class="card">
+    <h6>{{ blog.title }}</h6>
+    <p>{{ blog.shortsummery }}</p>
+    <a href="{% url 'singleBlog' pk=blog.pk %}">
+        <button>View Details</button>
+    </a>
+  
+
+
+</div>
+    {% endfor %}
+    
+</div>
+
+<p>End</p>
+{% endblock %}
